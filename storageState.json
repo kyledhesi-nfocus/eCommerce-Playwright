@@ -1,0 +1,55 @@
+{
+  "cookies": [
+    {
+      "name": "wordpress_sec_479efc27694de1240bbe63ecbb6e8baf",
+      "value": "kyle123%7C1714045894%7CjOEl7AeLrbEEiIecHyDiP3V8r5Ht7MonqYxeqgy6jHF%7Cf87997618f64015d5cffc68f5a6a3223dea0cf24973cb61ea2f8b2cc0afefd10",
+      "domain": "www.edgewordstraining.co.uk",
+      "path": "/demo-site/wp-content/plugins",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wordpress_sec_479efc27694de1240bbe63ecbb6e8baf",
+      "value": "kyle123%7C1714045894%7CjOEl7AeLrbEEiIecHyDiP3V8r5Ht7MonqYxeqgy6jHF%7Cf87997618f64015d5cffc68f5a6a3223dea0cf24973cb61ea2f8b2cc0afefd10",
+      "domain": "www.edgewordstraining.co.uk",
+      "path": "/demo-site/wp-admin",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "wordpress_logged_in_479efc27694de1240bbe63ecbb6e8baf",
+      "value": "kyle123%7C1714045894%7CjOEl7AeLrbEEiIecHyDiP3V8r5Ht7MonqYxeqgy6jHF%7Ca107126e09cf780b44e024b0fbd11da940756ff04c2bf629ac6099e61ff085f9",
+      "domain": "www.edgewordstraining.co.uk",
+      "path": "/demo-site/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "store_noticefe68900dee1653cf2d0662bb68d31594",
+      "value": "hidden",
+      "domain": "www.edgewordstraining.co.uk",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.edgewordstraining.co.uk",
+      "localStorage": [
+        {
+          "name": "wc_cart_hash_c6446e737ab5ae22d0f68a30ce6eb9ae",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

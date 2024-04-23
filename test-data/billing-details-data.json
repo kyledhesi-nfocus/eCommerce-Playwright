@@ -1,0 +1,10 @@
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "address": "Buckingham Palace Road",
+    "city": "London",
+    "postcode": "SW1A 1AA",
+    "phoneNumber": "0798347190321",
+    "email": "john.doe@example.com",
+    "paymentMethod": "Check payments"
+}
