@@ -13,5 +13,5 @@ test('logout', async ({ page }) => {
     } else {
         console.log('Already logged out');
     }
-    
+    await page.close();
 });

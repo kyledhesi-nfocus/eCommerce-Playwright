@@ -1,6 +1,6 @@
-import { defineConfig, devices, firefox } from '@playwright/test';
-import dotenv from 'dotenv';
+import { defineConfig, devices } from '@playwright/test';
 import type { ProductOptions } from './fixtures/hooks-fixture';
+import dotenv from 'dotenv';
 
 dotenv.config({ path: 'my.env'});
 
@@ -34,7 +34,7 @@ export default defineConfig<ProductOptions>({
     
     {
       name: 'Hoodie',
-      use: { ...devices['Desktop Firefox'], product: 'Hoodie' },
+      use: { ...devices['Desktop Chrome'], product: 'Hoodie' },
       dependencies: ['setup']
     },
 

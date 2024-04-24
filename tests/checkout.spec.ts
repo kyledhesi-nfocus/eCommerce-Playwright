@@ -23,7 +23,7 @@ test.describe('checkout tests', () => {
     await myAccountOrdersPage.gotoCart();
   });
 
-  test.afterEach(async ({emptyCartPage}) => { 
+  test.afterEach(async ({ emptyCartPage }) => { 
     await expect(emptyCartPage.emptyCart).toBeVisible(); 
     console.log('Cart is empty');
   });
