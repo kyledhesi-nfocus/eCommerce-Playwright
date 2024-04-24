@@ -24,5 +24,5 @@ test.describe('cart tests' , () => {
         await expect(emptyCartPage.emptyCart).toBeVisible(); // Clear the cart after each test
         console.log('Cart is empty');
     });
-});
+}); 
 
