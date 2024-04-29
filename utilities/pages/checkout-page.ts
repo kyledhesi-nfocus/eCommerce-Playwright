@@ -20,10 +20,10 @@ export class Checkout extends BasePOM {
         await this.address.fill(data.address);
         await this.city.fill(data.city);
         await this.postcode.fill(data.postcode);
-        await this.phoneNumber.fill(data.phoneNumber); // Assuming there is a phoneNumber field to fill
+        await this.phoneNumber.fill(data.phoneNumber);
         await this.email.fill(data.email);
         if (data.paymentMethod === 'Check payments') {
-            await this.checkPayments.click(); // Assuming checkPayments is the element for this payment method
+            await this.checkPayments.click();
         } else {
             await this.cashOnDelivery.click();
         }

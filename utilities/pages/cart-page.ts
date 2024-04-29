@@ -26,30 +26,31 @@ export class Cart extends BasePOM {
         }
     }
     
+    /* calculate the percentage reduced from subtotal price  */ 
     public async calculateDiscountPercentage() {
-        const subtotal = await this.convertSubtotalToFloat();
-        const discount = await this.convertReducedAmountToFloat();
+        const subtotal = await this.convertSubtotalToFloat();       // call 'convertSubotalToFloat' and assign to subtotal
+        const discount = await this.convertReducedAmountToFloat();  // call 'convertReducedAmountToFloat' and assign to discount
     
         if (subtotal === null || discount === null) {
-            return null; // Return null if either value couldn't be retrieved or is not applicable
+            return null; // return null if either value couldn't be retrieved
         }
-    
         const percentageDiscount = (discount / subtotal) * 100;
-        return percentageDiscount; // Return the discount percentage rounded to two decimal places
+        return percentageDiscount; // return the discount percentage
     }
-    
+
 
     public async calculateExpectedTotal() {
         const subtotal = await this.convertSubtotalToFloat();
         const discount = await this.convertReducedAmountToFloat();
         const shipping = await this.convertShippingToFloat();
         if (subtotal === null || discount === null || shipping === null) {
-            return 'Failed to calculate expected total'; // Return null if either value couldn't be retrieved or is not applicable
+            return 'Failed to calculate expected total'; // return null if either value couldn't be retrieved or is not applicable
         }
         const expectedTotal = subtotal - discount + shipping;
         return (expectedTotal.toFixed(2));
     }
 
+    /* remove coupon and item from cart */
     async clearCart() {
         if (await this.removeCoupon.isVisible()) {
             await this.removeCoupon.click();
@@ -64,26 +65,27 @@ export class Cart extends BasePOM {
         return new Checkout(this.page);
     }
 
-    /* return subtotal price */
+    /* helper function - return subtotal price */
     public async convertSubtotalToFloat() {
-        var subtotalPrice = await this.subtotalPrice.textContent();
+        var subtotalPrice = await this.subtotalPrice.textContent();     // retrieve text context from subtotalPrice element
         if (subtotalPrice == null) {
             return null;
         }
         subtotalPrice = subtotalPrice.replace('£', '');
-        return parseFloat(subtotalPrice);
+        return parseFloat(subtotalPrice);       // converts subtotalPrice to float
     }
 
-    /* return reduced amount */
+    /* helper function - return reduced amount */
     public async convertReducedAmountToFloat() {
-        var reducedAmount = await this.reducedAmount.textContent();
+        var reducedAmount = await this.reducedAmount.textContent();     // retrieve text content from reducedAmount element
         if (reducedAmount == null) {
             return null;
         }
         reducedAmount = reducedAmount.replace('£', '');
-        return parseFloat(reducedAmount);
+        return parseFloat(reducedAmount);   // converts reducedAmount to float
     }
 
+    /* helper function - return shipping price */
     public async convertShippingToFloat() {
         var shippingPrice = await this.shippingPrice.textContent();
         if (shippingPrice == null) {
@@ -91,7 +93,7 @@ export class Cart extends BasePOM {
         }
         shippingPrice = shippingPrice.replace(/Flat rate: £/g, '').replace(/£/g, '').trim();
 
-        return parseFloat(shippingPrice);
+        return parseFloat(shippingPrice);   // converts shippingPrice to float
     }
 
 }

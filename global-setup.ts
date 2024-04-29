@@ -13,11 +13,11 @@ setup('login', async ({ page, baseURL, storageState }) => {
   await page.addLocatorHandler(page.getByText('Dismiss'), async () => {
     await homePage.dismiss.click();
   });
-  await homePage.gotoMyAccount();     // enter 'My Account' page
+  await homePage.gotoMyAccount();     // navigate to 'My Account' page
   const loginPage = new Login(page);
   await loginPage.login();    // login to account
   const myAccountPage = new MyAccount(page);
-  await expect(myAccountPage.logout, 'Unsuccessfully logged in. Configure your .env file with valid login credentials').toBeVisible();
+  await expect(myAccountPage.logout, 'Unsuccessfully logged in. Configure your .env file with valid login credentials').toBeVisible();    // check if 'logout' link is displayed
   console.log('Successfully logged in');
-  await page.context().storageState({path: storageState as string});
-});
+  await page.context().storageState({ path: storageState as string });    // store in storageState
+}); 

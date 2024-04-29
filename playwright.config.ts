@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import type { ProductOptions } from './fixtures/hooks-fixture';
+import type { ProductOptions } from './modules/product-options';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: 'my.env'});
