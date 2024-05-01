@@ -28,7 +28,7 @@ export const test = base.extend<MyFixtures & ProductOptions>({
   },
 
   shopWithOneProduct: async ({ homePage, product }, use) => {
-    const shop = await homePage.gotoShop();
+    const shop = await homePage.gotoShop();   // navigate to 'Shop' page
     await shop.addItemToCart(product);    // add product to cart
     await use(shop);
   },

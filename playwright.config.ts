@@ -16,6 +16,7 @@ export default defineConfig<ProductOptions>({
     baseURL: process.env.BASE_URL,
     storageState: 'storageState.json',
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure'
   },
   /* Configure projects for different products */
   projects: [

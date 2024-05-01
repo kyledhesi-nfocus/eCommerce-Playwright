@@ -7,11 +7,11 @@ setup('login', async ({ page, baseURL, storageState }) => {
   if (!baseURL) {
     throw new Error("Base URL is not set. Configure your .env file or configuration.");
   } else {
-    await page.goto(baseURL!);
+    await page.goto(baseURL!);    // goto eCommerce website
   }
   const homePage = new Home(page);
   await page.addLocatorHandler(page.getByText('Dismiss'), async () => {
-    await homePage.dismiss.click();
+    await homePage.dismiss.click();   // dismiss notice
   });
   await homePage.gotoMyAccount();     // navigate to 'My Account' page
   const loginPage = new Login(page);
