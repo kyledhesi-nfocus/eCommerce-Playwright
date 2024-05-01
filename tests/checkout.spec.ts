@@ -19,7 +19,7 @@ test.describe('checkout tests', () => {
     const myAccountPage = new MyAccount(page);
     await myAccountPage.gotoOrders();   // navigate to 'Orders' page
     const myAccountOrdersPage = new MyAccountOrders(page);    
-    await expect.soft(myAccountOrdersPage.latestOrderNumber, 'Incorrect order number is displayed - Attaching screenshot to report...').toContainText(orderNumber);    // check if latest order contains order number
+    await expect.soft(myAccountOrdersPage.latestOrderNumber, 'Incorrect order number is displayed').toContainText(orderNumber);    // check if latest order contains order number
     await page.screenshot({ path: 'screenshots/AllOrders.png', fullPage: true });
     await testInfo.attach('AllOrders.png', {
       path: 'screenshots/AllOrders.png'
